@@ -1,0 +1,6 @@
+# CODEOWNERS
+# This file defines the code owners for this repository.
+# Only the designated owner(s) can approve and merge pull requests.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+* @pabi9625
