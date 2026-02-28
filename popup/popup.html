@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DeepSeek Toolkit</title>
+    <link rel="stylesheet" href="../assets/theme.css" />
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body class="dstoolkit-surface popup-shell">
+    <main class="popup-card">
+      <header class="popup-header">
+        <h1 class="popup-title">DeepSeek Toolkit</h1>
+      </header>
+
+      <section class="popup-section">
+        <div class="popup-section-header">
+          <span class="popup-label">Language</span>
+          <span id="enforceLanguageState" class="popup-enforce-badge">ON</span>
+        </div>
+
+        <div class="popup-language-row">
+          <div class="ds-select" id="languageDropdown">
+            <button
+              type="button"
+              id="languageDropdownTrigger"
+              class="ds-select-trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <span id="languageDropdownValue">Select language</span>
+              <span class="ds-select-chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <div id="languageDropdownMenu" class="ds-select-menu" role="listbox" aria-label="Language options"></div>
+          </div>
+
+          <label class="popup-toggle" for="enforceLanguageToggle" title="Enable/disable language enforcement">
+            <input type="checkbox" id="enforceLanguageToggle" />
+            <span class="popup-toggle-track" aria-hidden="true">
+              <span class="popup-toggle-knob"></span>
+            </span>
+          </label>
+        </div>
+        <select id="languageSelect" class="native-select-hidden" aria-hidden="true" tabindex="-1"></select>
+      </section>
+
+      <section class="popup-section popup-section-rules">
+        <div class="popup-section-header">
+          <span class="popup-label">Rules</span>
+          <span id="enforceRulesState" class="popup-enforce-badge">ON</span>
+        </div>
+
+        <div class="popup-rules-row">
+          <span class="popup-rules-description">On / Off</span>
+          <label class="popup-toggle" for="enforceRulesToggle" title="Enable/disable rules enforcement">
+            <input type="checkbox" id="enforceRulesToggle" />
+            <span class="popup-toggle-track" aria-hidden="true">
+              <span class="popup-toggle-knob"></span>
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <div class="popup-actions">
+        <button id="exportChatBtn" class="action-btn primary">Export Chat</button>
+        <div id="exportFilenameRow" class="export-filename-row hidden">
+          <input type="text" id="exportFilenameInput" class="export-filename-input" placeholder="filename" />
+          <button id="exportDownloadBtn" class="action-btn export-download-btn">Download</button>
+        </div>
+        <button id="openManagerBtn" class="action-btn secondary">Open Manager</button>
+      </div>
+
+      <p id="statusText" class="status"></p>
+    </main>
+
+    <script src="../src/storage.js"></script>
+    <script src="../src/languages.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

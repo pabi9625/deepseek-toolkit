@@ -1,0 +1,598 @@
+:root {
+  --bg: #070b17;
+  --card: #0f162b;
+  --text: #eef4ff;
+  --muted: #a8bcff;
+  --primary: #5686fe;
+  --primary-2: #7fa5ff;
+  --danger: #ff4d4f;
+  --border: #243a73;
+  --glow: 0 0 0.6rem rgba(86, 134, 254, 0.5);
+}
+
+body.dstoolkit-surface.light {
+  --bg: #f5f8ff;
+  --card: #edf2ff;
+  --text: #1a2550;
+  --muted: #4f66b2;
+  --primary: #5686fe;
+  --primary-2: #3f73f4;
+  --danger: #d9363e;
+  --border: #c6d7ff;
+  --glow: 0 0 0.35rem rgba(86, 134, 254, 0.28);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body.dstoolkit-surface {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #1a2748 0%, var(--bg) 48%, #050912 100%);
+}
+
+body.dstoolkit-surface.light {
+  background: linear-gradient(180deg, #f8faff 0%, #edf3ff 100%);
+}
+
+.popup-shell {
+  width: 300px;
+  min-width: 300px;
+  min-height: 220px;
+  padding: 0.95rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(86, 134, 254, 0.12), transparent 42%), var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--glow), 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.options-shell {
+  width: min(1240px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 1rem 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body.dstoolkit-surface.options-page {
+  overflow: auto;
+  min-height: 100vh;
+}
+
+body.dstoolkit-surface.options-page .card {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(145deg, rgba(86, 134, 254, 0.1), transparent 45%),
+    repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    var(--card);
+  box-shadow:
+    inset 0 0 0 1px rgba(86, 134, 254, 0.2),
+    inset 0 0 30px rgba(7, 11, 23, 0.35),
+    var(--glow),
+    0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+body.dstoolkit-surface.options-page h1,
+body.dstoolkit-surface.options-page h2 {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(86, 134, 254, 0.28);
+}
+
+body.dstoolkit-surface.options-page .muted,
+body.dstoolkit-surface.options-page label {
+  letter-spacing: 0.02em;
+}
+
+.options-shell .hero-card {
+  grid-column: 1 / -1;
+}
+
+.options-shell .language-card,
+.options-shell .editor-card {
+  grid-column: 1 / 8;
+}
+
+.options-shell .prompt-card {
+  grid-column: 8 / -1;
+  grid-row: 2 / span 2;
+  align-self: start;
+  max-height: calc(100vh - 8rem);
+  overflow: auto;
+}
+
+.card {
+  background: linear-gradient(145deg, rgba(86, 134, 254, 0.12), transparent 42%), var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 1rem;
+  margin: 0;
+  box-shadow: var(--glow), 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+body.dstoolkit-surface h1,
+body.dstoolkit-surface h2,
+body.dstoolkit-surface h3 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-2);
+  line-height: 1.2;
+}
+
+body.dstoolkit-surface .muted {
+  color: var(--muted);
+  margin: 0.25rem 0 0.5rem;
+}
+
+body.dstoolkit-surface .popup-card {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+}
+
+body.dstoolkit-surface .popup-header {
+  display: grid;
+  gap: 0.25rem;
+}
+
+body.dstoolkit-surface .popup-title {
+  font-size: 1.9rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+body.dstoolkit-surface .popup-subtitle {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+body.dstoolkit-surface .popup-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+body.dstoolkit-surface .native-select-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.dstoolkit-surface .ds-select {
+  position: relative;
+}
+
+body.dstoolkit-surface .ds-select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.72rem 0.8rem;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+body.dstoolkit-surface.light .ds-select-trigger {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+body.dstoolkit-surface .ds-select-trigger:focus-visible,
+body.dstoolkit-surface .ds-select.open .ds-select-trigger {
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+body.dstoolkit-surface .ds-select-chevron {
+  color: var(--primary-2);
+  transition: transform 120ms ease;
+}
+
+body.dstoolkit-surface .ds-select.open .ds-select-chevron {
+  transform: rotate(180deg);
+}
+
+body.dstoolkit-surface .ds-select-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  display: none;
+  max-height: 220px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.3rem;
+  background: #111113;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+body.dstoolkit-surface.light .ds-select-menu {
+  background: #fff2e7;
+}
+
+body.dstoolkit-surface .ds-select.open .ds-select-menu {
+  display: grid;
+  gap: 0.2rem;
+}
+
+body.dstoolkit-surface .ds-select-option {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+body.dstoolkit-surface .ds-select-option:hover {
+  background: rgba(86, 134, 254, 0.16);
+}
+
+body.dstoolkit-surface .ds-select-option.selected {
+  background: rgba(86, 134, 254, 0.24);
+  border-color: rgba(86, 134, 254, 0.42);
+}
+
+body.dstoolkit-surface .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.2rem 0 1rem;
+}
+
+body.dstoolkit-surface .row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+body.dstoolkit-surface .header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+body.dstoolkit-surface .theme-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body.dstoolkit-surface .theme-toggle input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.dstoolkit-surface .theme-toggle-switch {
+  width: 46px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(5, 9, 18, 0.9), rgba(15, 22, 43, 0.9));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(86, 134, 254, 0.12);
+  transition: border-color 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+body.dstoolkit-surface.light .theme-toggle-switch {
+  background: linear-gradient(180deg, rgba(196, 214, 255, 0.95), rgba(162, 187, 245, 0.95));
+}
+
+body.dstoolkit-surface .theme-toggle-knob {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #d7e5ff, #94b4ff);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transform: translateX(0);
+  transition: transform 160ms ease;
+}
+
+body.dstoolkit-surface .theme-toggle-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+body.dstoolkit-surface .theme-toggle input:checked + .theme-toggle-switch .theme-toggle-knob {
+  transform: translateX(20px);
+}
+
+body.dstoolkit-surface .theme-toggle input:checked + .theme-toggle-switch {
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+body.dstoolkit-surface .theme-toggle input:focus-visible + .theme-toggle-switch {
+  border-color: var(--primary-2);
+  box-shadow: var(--glow);
+}
+
+body.dstoolkit-surface .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 0.75rem;
+}
+
+body.dstoolkit-surface .form-grid.hidden {
+  display: none;
+}
+
+body.dstoolkit-surface .form-grid .full {
+  grid-column: 1 / -1;
+}
+
+body.dstoolkit-surface label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--muted);
+}
+
+body.dstoolkit-surface input,
+body.dstoolkit-surface textarea,
+body.dstoolkit-surface select,
+.dstoolkit-search {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.72rem 0.8rem;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text);
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+body.dstoolkit-surface.options-page input,
+body.dstoolkit-surface.options-page textarea,
+body.dstoolkit-surface.options-page select,
+body.dstoolkit-surface.options-page .dstoolkit-search,
+body.dstoolkit-surface.options-page .ds-select-trigger {
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 0 1px rgba(86, 134, 254, 0.16),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.2);
+}
+
+body.dstoolkit-surface.light input,
+body.dstoolkit-surface.light textarea,
+body.dstoolkit-surface.light select {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+body.dstoolkit-surface input:focus,
+body.dstoolkit-surface textarea:focus,
+body.dstoolkit-surface select:focus,
+.dstoolkit-search:focus {
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+body.dstoolkit-surface select {
+  min-height: 2.7rem;
+}
+
+body.dstoolkit-surface .language-card select {
+  min-height: 14rem;
+}
+
+body.dstoolkit-surface .language-picker-grid {
+  margin-top: 0.35rem;
+}
+
+body.dstoolkit-surface .language-search-wrap {
+  position: relative;
+}
+
+body.dstoolkit-surface .language-dropdown {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  display: none;
+  max-height: 240px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.25rem;
+  background: #111113;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+
+body.dstoolkit-surface.light .language-dropdown {
+  background: #fff2e7;
+}
+
+body.dstoolkit-surface .language-dropdown.open {
+  display: grid;
+  gap: 0.2rem;
+}
+
+body.dstoolkit-surface .language-dropdown-option {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+body.dstoolkit-surface .language-dropdown-option:hover {
+  background: rgba(86, 134, 254, 0.16);
+}
+
+body.dstoolkit-surface .language-dropdown-option.selected {
+  background: rgba(86, 134, 254, 0.24);
+  border-color: rgba(86, 134, 254, 0.42);
+}
+
+body.dstoolkit-surface .language-dropdown-empty {
+  margin: 0;
+  padding: 0.55rem 0.65rem;
+  color: var(--muted);
+}
+
+body.dstoolkit-surface .action-btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.68rem 0.95rem;
+  background: linear-gradient(180deg, var(--primary), #3f6fe3);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+body.dstoolkit-surface.options-page .action-btn {
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+
+body.dstoolkit-surface .action-btn.secondary {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary-2);
+}
+
+body.dstoolkit-surface .action-btn.danger {
+  background: rgba(255, 77, 79, 0.15);
+  border-color: var(--danger);
+  color: #ffb0b1;
+}
+
+body.dstoolkit-surface .action-btn:hover {
+  box-shadow: var(--glow);
+  transform: translateY(-1px);
+}
+
+body.dstoolkit-surface .action-btn:active {
+  transform: translateY(0);
+}
+
+body.dstoolkit-surface .action-btn:focus-visible {
+  border-color: var(--primary-2);
+  box-shadow: var(--glow);
+}
+
+body.dstoolkit-surface .popup-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+}
+
+body.dstoolkit-surface .status {
+  min-height: 1.2rem;
+  margin-top: 0.15rem;
+  color: var(--primary-2);
+  font-size: 0.88rem;
+}
+
+body.dstoolkit-surface .status.error {
+  color: #ff8f91;
+}
+
+body.dstoolkit-surface .prompt-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+body.dstoolkit-surface .prompt-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background:
+    linear-gradient(145deg, rgba(86, 134, 254, 0.12), rgba(86, 134, 254, 0.04)),
+    rgba(86, 134, 254, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(86, 134, 254, 0.18);
+}
+
+body.dstoolkit-surface .prompt-code {
+  margin: 0 0 0.35rem;
+  color: var(--primary-2);
+  font-weight: 700;
+}
+
+body.dstoolkit-surface .prompt-preview {
+  margin: 0 0 0.65rem;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+@media (max-width: 980px) {
+  .options-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .options-shell .hero-card,
+  .options-shell .language-card,
+  .options-shell .editor-card,
+  .options-shell .prompt-card {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 720px) {
+  .options-shell {
+    width: min(1240px, 100% - 1rem);
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+  }
+
+  body.dstoolkit-surface .header-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body.dstoolkit-surface .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

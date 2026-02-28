@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Language Selection</title>
+    <link rel="stylesheet" href="../assets/theme.css" />
+    <link rel="stylesheet" href="./prompt-manager.css" />
+  </head>
+  <body class="dstoolkit-surface options-page panel-page">
+    <main class="panel-layout">
+      <section id="languageCard" class="card language-card">
+        <div class="lang-section-header">
+          <span class="lang-section-label">Language</span>
+          <span id="activeLanguageEnforceState" class="lang-enforce-badge">ON</span>
+        </div>
+
+        <div class="lang-selection-row" id="languagePickerSection">
+          <div
+            id="languageSearchCombobox"
+            class="language-search-wrap lang-select-field"
+            role="combobox"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="languageDropdownList"
+          >
+            <input
+              id="languageSearchInput"
+              type="text"
+              placeholder="Search language..."
+              autocomplete="off"
+              aria-autocomplete="list"
+            />
+            <div id="languageDropdownList" class="language-dropdown" role="listbox" aria-label="Language options"></div>
+          </div>
+
+          <label class="lang-toggle" for="activeLanguageEnforceToggle" title="Enable/disable language enforcement">
+            <input type="checkbox" id="activeLanguageEnforceToggle" />
+            <span class="lang-toggle-track" aria-hidden="true">
+              <span class="lang-toggle-knob"></span>
+            </span>
+          </label>
+        </div>
+
+        <p id="savedLanguageText" class="muted lang-saved-text" hidden></p>
+        <p id="statusText" class="status"></p>
+      </section>
+    </main>
+
+    <script src="../src/storage.js"></script>
+    <script src="../src/languages.js"></script>
+    <script src="./options.js"></script>
+  </body>
+</html>

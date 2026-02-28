@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek Toolkit",
+  "description": "Language enforcement and quick prompt tools for chat.deepseek.com.",
+  "version": "1.0.0",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["https://chat.deepseek.com/*", "<all_urls>"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "action": {
+    "default_title": "DeepSeek Toolkit",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": ["src/storage.js", "src/contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

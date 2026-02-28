@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DeepSeek Toolkit Manager</title>
+    <link rel="stylesheet" href="../assets/theme.css" />
+    <link rel="stylesheet" href="./prompt-manager.css" />
+  </head>
+  <body class="dstoolkit-surface options-page">
+    <main class="manager-layout">
+      <aside id="managerSidebar" class="manager-sidebar">
+        <div class="sidebar-top-row">
+          <div class="sidebar-brand">
+            <span class="sidebar-brand-name">DeepSeek Toolkit</span>
+          </div>
+          <button id="sidebarToggleBtn" type="button" class="sidebar-toggle-btn" aria-label="Collapse sidebar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="11 17 6 12 11 7"></polyline>
+              <polyline points="18 17 13 12 18 7"></polyline>
+            </svg>
+          </button>
+          <button id="sidebarExpandBtn" type="button" class="sidebar-expand-btn" aria-label="Expand sidebar" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="13 7 18 12 13 17"></polyline>
+              <polyline points="6 7 11 12 6 17"></polyline>
+            </svg>
+          </button>
+        </div>
+        <nav class="sidebar-nav">
+          <button
+            type="button"
+            class="sidebar-nav-btn active"
+            data-page="./language-selection.html"
+            data-title="Language Selection"
+            title="Language Selection"
+          >
+            <span class="sidebar-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm6.92 9h-3.08a15.35 15.35 0 0 0-1.11-5.03A8.03 8.03 0 0 1 18.92 11zM12 4.1c.77 1.06 1.62 3.09 1.84 6.9h-3.68c.22-3.81 1.07-5.84 1.84-6.9zM9.27 5.97A15.35 15.35 0 0 0 8.16 11H5.08a8.03 8.03 0 0 1 4.19-5.03zM4.26 13h3.9a15.83 15.83 0 0 0 1.1 5.4A8.03 8.03 0 0 1 4.26 13zm7.74 6.9c-.77-1.06-1.62-3.09-1.84-6.9h3.68c-.22 3.81-1.07 5.84-1.84 6.9zm2.73-1.5a15.83 15.83 0 0 0 1.1-5.4h3.9a8.03 8.03 0 0 1-5 5.4z"
+                ></path>
+              </svg>
+            </span>
+            <span class="sidebar-nav-label">Language Selection</span>
+          </button>
+          <button
+            type="button"
+            class="sidebar-nav-btn"
+            data-page="./quick-prompt.html"
+            data-title="Quick Prompt"
+            title="Quick Prompt"
+          >
+            <span class="sidebar-nav-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="120 -920 720 880" fill="currentColor" role="img" focusable="false" aria-hidden="true">
+                <path d="m422-232 207-248H469l29-227-185 267h139l-30 208ZM320-80l40-280H160l360-520h80l-40 320h240L400-80h-80Zm151-390Z"></path>
+              </svg>
+            </span>
+            <span class="sidebar-nav-label">Quick Prompt</span>
+          </button>
+          <button
+            type="button"
+            class="sidebar-nav-btn"
+            data-page="./rules.html"
+            data-title="Rules"
+            title="Rules"
+          >
+            <span class="sidebar-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" focusable="false" aria-hidden="true">
+                <path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8l-5-5z"/>
+                <polyline points="14 3 14 8 21 8"/>
+                <line x1="8" y1="13" x2="16" y2="13"/>
+                <line x1="8" y1="17" x2="16" y2="17"/>
+                <line x1="8" y1="9" x2="10" y2="9"/>
+              </svg>
+            </span>
+            <span class="sidebar-nav-label">Rules</span>
+          </button>
+        </nav>
+      </aside>
+
+      <section class="manager-main">
+        <header class="manager-header">
+          <div class="header-main">
+            <div>
+              <h2 id="managerPageTitle">Language Selection</h2>
+              <p id="managerPageSubtitle" class="muted">Configure the default response language for quick prompts.</p>
+            </div>
+          </div>
+        </header>
+        <section class="manager-content">
+          <iframe
+            id="managerFrame"
+            class="manager-frame"
+            title="Manager Content"
+            src="./language-selection.html"
+          ></iframe>
+        </section>
+      </section>
+    </main>
+
+    <script src="./prompt-manager.js"></script>
+  </body>
+</html>

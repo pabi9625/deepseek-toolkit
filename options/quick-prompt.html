@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quick Prompt</title>
+    <link rel="stylesheet" href="../assets/theme.css" />
+    <link rel="stylesheet" href="./prompt-manager.css" />
+  </head>
+  <body class="dstoolkit-surface options-page panel-page">
+    <main class="panel-layout panel-layout-prompt">
+      <section id="promptEditorCard" class="card editor-card">
+        <h2>Create / Update Prompt</h2>
+        <div class="form-grid">
+          <label>
+            Code
+            <input id="codeInput" type="text" placeholder="/assignment" />
+          </label>
+          <label class="full">
+            Prompt
+            <textarea id="promptInput" rows="8" placeholder="Write your reusable prompt..."></textarea>
+          </label>
+        </div>
+        <div class="row">
+          <button id="savePromptBtn" class="action-btn">Save Prompt</button>
+          <button id="resetFormBtn" class="action-btn secondary">Reset</button>
+        </div>
+        <p id="statusText" class="status"></p>
+      </section>
+
+      <section id="promptLibraryCard" class="card prompt-card">
+        <h2>Saved Prompts</h2>
+        <div id="promptList" class="prompt-list"></div>
+      </section>
+    </main>
+
+    <script src="../src/storage.js"></script>
+    <script src="../src/languages.js"></script>
+    <script src="./options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rules</title>
+    <link rel="stylesheet" href="../assets/theme.css" />
+    <link rel="stylesheet" href="./prompt-manager.css" />
+    <link rel="stylesheet" href="./rules.css" />
+  </head>
+  <body class="dstoolkit-surface options-page panel-page">
+    <main class="panel-layout">
+      <section class="card rules-enforce-card">
+        <div class="rules-section-header">
+          <span class="rules-section-label">Rules</span>
+          <span id="activeRulesEnforceState" class="rules-enforce-badge">ON</span>
+        </div>
+
+        <div class="rules-toggle-row">
+          <span class="rules-toggle-description">Automatically prefix every chat message with your rules</span>
+          <label class="rules-toggle" for="activeRulesEnforceToggle" title="Enable/disable rules enforcement">
+            <input type="checkbox" id="activeRulesEnforceToggle" />
+            <span class="rules-toggle-track" aria-hidden="true">
+              <span class="rules-toggle-knob"></span>
+            </span>
+          </label>
+        </div>
+        <p id="statusText" class="status"></p>
+      </section>
+
+      <section class="card rules-editor-card">
+        <h2>Add Rule</h2>
+        <div class="rules-form">
+          <label>
+            Rule
+            <textarea id="ruleInput" rows="4" placeholder="e.g. Always respond in bullet points..."></textarea>
+          </label>
+        </div>
+        <div class="row">
+          <button id="saveRuleBtn" class="action-btn">Save Rule</button>
+          <button id="resetRuleBtn" class="action-btn secondary">Reset</button>
+        </div>
+      </section>
+
+      <section class="card rules-list-card">
+        <h2>Saved Rules</h2>
+        <div id="rulesList" class="rules-list"></div>
+      </section>
+    </main>
+
+    <script src="../src/storage.js"></script>
+    <script src="./rules.js"></script>
+  </body>
+</html>
